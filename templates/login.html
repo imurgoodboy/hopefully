@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Login</h1>
+<form method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <label for="login_type">Login Type:</label>
+    <select name="login_type" id="login_type" required>
+        <option value="normal">Normal User</option>
+        <option value="special">Special User</option>
+    </select>
+    <button type="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up here</a>.</p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %} 

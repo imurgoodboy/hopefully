@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Submit a Grievance</h1>
+<form method="post">
+    <label for="message">Grievance (max 2000 chars):</label>
+    <textarea name="message" id="message" maxlength="2000" required></textarea>
+    <label for="mood">Mood (optional):</label>
+    <input type="text" name="mood" id="mood">
+    <label for="severity">Severity (optional):</label>
+    <select name="severity" id="severity">
+        <option value="">Select</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    <label for="suggestion">Suggestion (optional):</label>
+    <input type="text" name="suggestion" id="suggestion">
+    <button type="submit">Submit Grievance</button>
+</form>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a> | <a href="{{ url_for('logout') }}">Logout</a>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %} 

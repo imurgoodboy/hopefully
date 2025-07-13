@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Dashboard</h1>
+<p>Welcome, {{ session['username'] }}!</p>
+<ul>
+    <li><a href="{{ url_for('good_boy') }}">Good Boy Moments</a></li>
+    <li><a href="{{ url_for('bad_boy') }}">Bad Boy Moments</a></li>
+    <li><a href="{{ url_for('grievance') }}">Submit Grievance</a></li>
+    <li><a href="{{ url_for('view_content') }}">View All Content</a></li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+</ul>
+{% endblock %} 

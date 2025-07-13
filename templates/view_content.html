@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>All Submissions</h1>
+<h2>Grievances</h2>
+<ul>
+  {% for g in grievances %}
+    <li><strong>{{ g['username'] }}</strong> ({{ g['timestamp'] }}): {{ g['message'] }}
+      {% if g['mood'] %} | Mood: {{ g['mood'] }}{% endif %}
+      {% if g['severity'] %} | Severity: {{ g['severity'] }}{% endif %}
+      {% if g['suggestion'] %} | Suggestion: {{ g['suggestion'] }}{% endif %}
+    </li>
+  {% else %}
+    <li>No grievances submitted yet.</li>
+  {% endfor %}
+</ul>
+<h2>Good Boy Moments</h2>
+<ul>
+  {% for gb in good_boys %}
+    <li><strong>{{ gb['username'] }}</strong> ({{ gb['timestamp'] }}): {{ gb['message'] }}</li>
+  {% else %}
+    <li>No good boy moments yet.</li>
+  {% endfor %}
+</ul>
+<h2>Bad Boy Moments</h2>
+<ul>
+  {% for bb in bad_boys %}
+    <li><strong>{{ bb['username'] }}</strong> ({{ bb['timestamp'] }}): {{ bb['message'] }}</li>
+  {% else %}
+    <li>No bad boy moments yet.</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a> | <a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %} 

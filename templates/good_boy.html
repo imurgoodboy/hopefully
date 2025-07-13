@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Good Boy Moments</h1>
+<form method="post">
+    <label for="message">Describe your Good Boy Moment (max 2000 chars):</label>
+    <textarea name="message" id="message" maxlength="2000" required></textarea>
+    <button type="submit">Submit Good Boy Moment</button>
+</form>
+<p>Today's Good Boy Count: <strong>{{ today_count }}</strong></p>
+<h2>Good Boy Moments - Last 7 Days</h2>
+<ul>
+  {% for day, count in stats.items() %}
+    <li>{{ day }}: {{ count }}</li>
+  {% endfor %}
+</ul>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a> | <a href="{{ url_for('logout') }}">Logout</a>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %} 
