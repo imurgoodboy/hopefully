@@ -1,5 +1,5 @@
 body {
-    background-color: #fa8072;
+    background-color: #ffe0db; /* softer, less salmony, warm pastel */
     color: #000;
     font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
@@ -41,4 +41,38 @@ button:hover {
 
 h1, h2, h3 {
     color: #000;
+}
+
+.dashboard-btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.dashboard-btn {
+    display: block;
+    width: 340px;
+    max-width: 90vw;
+    padding: 22px 0;
+    margin: 0 auto;
+    background: #ffb6b6;
+    color: #222;
+    border: none;
+    border-radius: 28px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.dashboard-btn:hover {
+    background: #ff8c8c;
+    color: #000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    transform: translateY(-2px) scale(1.03);
 } 
