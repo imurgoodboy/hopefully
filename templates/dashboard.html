@@ -2,11 +2,11 @@
 {% block content %}
 <h1>Dashboard</h1>
 <p>Welcome, {{ session['username'] }}!</p>
-<div class="dashboard-btn-group">
-    <a class="dashboard-btn" href="{{ url_for('good_boy') }}">Good Boy Moments</a>
-    <a class="dashboard-btn" href="{{ url_for('bad_boy') }}">Bad Boy Moments</a>
-    <a class="dashboard-btn" href="{{ url_for('grievance') }}">Submit Grievance</a>
-    <a class="dashboard-btn" href="{{ url_for('view_content') }}">View All Content</a>
-    <a class="dashboard-btn" href="{{ url_for('logout') }}">Logout</a>
-</div>
+<ul class="dashboard-nav">
+    <li><a class="dashboard-btn" href="{{ url_for('good_boy') }}">Good Boy Moments</a></li>
+    <li><a class="dashboard-btn" href="{{ url_for('bad_boy') }}">Bad Boy Moments</a></li>
+    <li><a class="dashboard-btn" href="{{ url_for('grievance') }}">Submit Grievance</a></li>
+    <li><a class="dashboard-btn" href="{{ url_for('view_content') }}">View All Content</a></li>
+    <li><a class="dashboard-btn" href="{{ url_for('logout') }}">Logout</a></li>
+</ul>
 {% endblock %} 
